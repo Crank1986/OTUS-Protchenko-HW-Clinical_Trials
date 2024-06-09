@@ -1,32 +1,16 @@
-## Книга: PostgreSQL 14. Оптимизация, Kubernetes, кластера, облака.
-#### Author https://aristov.tech
-#### В новой версии актуализированы материалы, уменьшено количество теоретических материалов, добавлено много новой практики, обновление кластера с 13 на 14 версию с особенностями нового шифрования паролей, современные бэкапы pgBackRest, pg_probackup, Wal-G, утилита pg_rewind для восстановления кластера после сбоя.
-#### Отрывок книги PostgreSQL 14. Оптимизация, Kubernetes, кластера, облака. https://aristov.tech/PostgreSQL14preview.pdf
-#### заказ https://aristov.tech/#orderbook
-## Оглавление
-1. [PostgreSQL 14. Установка, новые возможности](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER01.md)
-2. [Физический уровень](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER02.md)
-3. [Работа с консольной утилитой psql](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER03.md)
-4. [ACID && MVCC](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER04.md)
-5. [Уровни изоляции транзакций](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER05.md)
-6. [Логический уровень](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER06.md)
-7. [Работа с правами пользователя](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER07.md)
-8. [Журналы](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER08.md)
-9. [Блокировки](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER09.md)
-10. [Настройка PostgreSQL](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER10.md)
-11. [Работа с большим объёмом реальных данных](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER11.md)
-12. [Виды индексов. Работа с индексами и оптимизация запросов](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER12.md)
-13. [Различные виды join'ов. Применение и оптимизация](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER13.md)
-14. [Сбор и использование статистики](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER14.md)
-15. [Оптимизация производительности. Профилирование. Мониторинг](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER15.md)
-16. [Секционирование](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER16.md)
-17. [Резервное копирование и восстановление](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER17.md) 
-18. [Виды и устройство репликации в PostgreSQL](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER18.md)
-19. [PostgreSQL и Google Kubernetes Engine](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER19.md)    
-20. [Кластеры высокой доступности для PostgreSQL](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER20.md)    
-21. [Кластеры для горизонтального масштабирования PostgreSQL](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER21.md)
-22. [PostgreSQL и Google Cloud Platform](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER22.md)    
-23. [PostgreSQL и AWS](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER23.md)    
-24. [PostgreSQL и Azure](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER24.md)    
-25. [PostgreSQL и Яндекс Облако](https://github.com/aeuge/Postgres14book/blob/main/chapters/CHAPTER25.md)    
+# База данных клических исследований   
+База данных предоставляет информацию об клинических исследованиях в разрезе пациентов, докторов, территорий и этапах клинических исследований. На основе полученной информации выгружается аналитика в разрезах лекарства, болезни, территории или фазы клинического исследования.
 
+## Бизнес задачи, решаемые в с помощью базы данных
+1. Централизованное хранения данных пациентов, врачей, лекарств и территорий, участвующих в клинических исследованиях
+2. Возможность выгрузить аналитику в различных разрезах: лекарство, территория, врач, больница.
+3. Возможность предоставлять выгрузку данных о пациентах для врачей, участвующих в исследовании, не указывая персональные данные пациентов, а также не употребляет пациент плацебо или нет, то есть так называемое - "Заслепление" участников исследования.
+4. ФОрмирование выгрузки данных для проведения аналитики специалистами регуляторных органов и дальнейшего предоставления данных на регистрацию лекарственного средства.
+
+## Описание таблиц
+1. Таблица "Patients" - хранение личных данных пациентов - ФИО.
+2. Таблица "Doctors" - хранение информации о врачах, участвующих в исследовании - ФИО, специализация.
+3. Таблица "Hospitals" - хранение данных об учереждении на платформе которого проводится клиническое исследование.
+4. Таблица "Drugs" - хранение информации о препарате, который участвует в клиническом исследовании
+5. Таблица "Dicease" - хранение информации о заболевании, исследование которого предполагается в клиническом исследовании.
+6. Таблица "Clinical Trials" - хранение сводной информации, содержащей данные из всех указанных таблиц, также указывается является ли используемый препарат плацебо или нет, данные об этапе клинического исследования и обращения/жалобы участников на воздействие препарата, побочные эффекты.
