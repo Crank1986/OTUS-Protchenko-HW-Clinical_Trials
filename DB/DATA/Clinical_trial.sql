@@ -1,22 +1,22 @@
-CREATE TABLE "Clinical_trial" (
-  "Clinical_trial_name" varchar(150),
-  "Clinical_trials_phase" varchar(150),
-  "Start_date" datetime,
-  "End_date" datetime,
-  "Is_Placebo" bool,
-  "Patient_INN_FK" number,
-  "Hospital_ID_FK" number,
-  "Doctor_ID_FK" number,
-  "Drug_ID_FK" number,
-  "Dicease_ID_FK" number
+create TABLE "clinical_trial" (
+  "clinical_trial_name" varchar(150),
+  "clinical_trials_phase" varchar(150),
+  "start_date" datetime,
+  "end_date" datetime,
+  "is_placebo" bool,
+  "patient_inn_fk" number,
+  "hospital_id_fk" number,
+  "doctor_id_fk" number,
+  "drug_id_fk" number,
+  "dicease_id_fk" number
 );
 
-ALTER TABLE "Clinical_trial" ADD FOREIGN KEY ("Patient_INN_FK") REFERENCES "Patient" ("Personel_INN");
+ALTER TABLE "clinical_trial" ADD FOREIGN KEY ("patient_inn_fk") REFERENCES "patient" ("personel_inn");
 
-ALTER TABLE "Clinical_trial" ADD FOREIGN KEY ("Hospital_ID_FK") REFERENCES "Hospital" ("ID");
+ALTER TABLE "clinical_trial" ADD FOREIGN KEY ("hospital_id_fk") REFERENCES "hospital" ("id");
 
-ALTER TABLE "Clinical_trial" ADD FOREIGN KEY ("Doctor_ID_FK") REFERENCES "Doctor" ("ID");
+ALTER TABLE "clinical_trial" ADD FOREIGN KEY ("doctor_id_fk") REFERENCES "doctor" ("id");
 
-ALTER TABLE "Clinical_trial" ADD FOREIGN KEY ("Drug_ID_FK") REFERENCES "Drug" ("ID");
+ALTER TABLE "clinical_trial" ADD FOREIGN KEY ("drug_id_fk") REFERENCES "drug" ("id");
 
-ALTER TABLE "Clinical_trial" ADD FOREIGN KEY ("Dicease_ID_FK") REFERENCES "Dicease" ("ID");
+ALTER TABLE "clinical_trial" ADD FOREIGN KEY ("dicease_id_fk") REFERENCES "dicease" ("id");

@@ -1,4 +1,4 @@
-CREATE TABLE "Side_effect" (
-  "ID" number PRIMARY KEY,
-  "Side_effect_name" varchar(150)
+CREATE TABLE "side_effect" (
+  "id" number PRIMARY KEY,
+  "side_effect_name" varchar(150)
 );

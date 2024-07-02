@@ -1,6 +1,6 @@
-CREATE TABLE "Doctors_Specialization" (
-  "Doctor_ID_FK" number,
-  "Specialization_ID_FK" number
+CREATE TABLE "doctors_specialization" (
+  "doctor_id_fk" number,
+  "specialization_id_fk" number
 );
-ALTER TABLE "Doctors_Specialization" ADD FOREIGN KEY ("Doctor_ID_FK") REFERENCES "Doctor" ("ID");
-ALTER TABLE "Doctors_Specialization" ADD FOREIGN KEY ("Specialization_ID_FK") REFERENCES "Specialization" ("ID");
+ALTER TABLE "doctors_specialization" ADD FOREIGN KEY ("doctor_id_fk") REFERENCES "doctor" ("id");
+ALTER TABLE "doctors_specialization" ADD FOREIGN KEY ("specialization_id_fk") REFERENCES "specialization" ("id");

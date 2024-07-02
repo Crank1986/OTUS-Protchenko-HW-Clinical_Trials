@@ -1,8 +1,8 @@
-CREATE TABLE "Drug" (
-  "ID" number PRIMARY KEY,
-  "Drug_name" varchar(150),
-  "Article" varchar(150),
-  "Active_Principle" varchar(150),
-  "Global_name" varchar(150),
-  "Local_name" varchar(150)
+CREATE TABLE "drug" (
+  "id" number PRIMARY KEY,
+  "drug_name" varchar(150),
+  "article" varchar(150),
+  "active_principle" varchar(150),
+  "global_name" varchar(150),
+  "local_name" varchar(150)
 );

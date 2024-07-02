@@ -1,10 +1,10 @@
-CREATE TABLE "Patient" (
-  "Personel_INN" number PRIMARY KEY,
-  "First_name" varchar(150),
-  "Middle_name" varchar(150),
-  "Last_name" varchar(150),
-  "SNILS" varchar(20),
-  "Email" varchar(150),
-  "Phone_number" varchar(20)
+CREATE TABLE "patient" (
+  "personel_inn" number PRIMARY KEY,
+  "first_name" varchar(150),
+  "middle_name" varchar(150),
+  "last_name" varchar(150),
+  "snils" varchar(20),
+  "email" varchar(150),
+  "phone_number" varchar(20)
 );
 

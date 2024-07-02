@@ -1,11 +1,11 @@
-CREATE TABLE "Hospital" (
-  "ID" number PRIMARY KEY,
-  "Hospital_Name" varchar(150),
-  "Address" varchar(200),
-  "Patients_FK" number,
-  "Doctors_FK" number,
-  "Hospital_Specializtion_FK" number
+CREATE TABLE "hospital" (
+  "id" number PRIMARY KEY,
+  "hospital_name" varchar(150),
+  "address" varchar(200),
+  "patients_fk" number,
+  "doctors_fk" number,
+  "hospital_specializtion_fk" number
 );
-ALTER TABLE "Hospital" ADD FOREIGN KEY ("Patients_FK") REFERENCES "Patient" ("Personel_INN");
-ALTER TABLE "Hospital" ADD FOREIGN KEY ("Doctors_FK") REFERENCES "Doctor" ("ID");
-ALTER TABLE "Hospital" ADD FOREIGN KEY ("Hospital_Specializtion_FK") REFERENCES "Specialization" ("ID");
+ALTER TABLE "hospital" ADD FOREIGN KEY ("patients_fk") REFERENCES "patient" ("personel_inn");
+ALTER TABLE "hospital" ADD FOREIGN KEY ("doctors_fk") REFERENCES "doctor" ("id");
+ALTER TABLE "hospital" ADD FOREIGN KEY ("hospital_specializtion_fk") REFERENCES "specialization" ("id");

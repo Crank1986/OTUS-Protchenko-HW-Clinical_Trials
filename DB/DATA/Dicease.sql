@@ -1,7 +1,7 @@
-CREATE TABLE "Dicease" (
-  "ID" number PRIMARY KEY,
-  "Dicease_Name" number,
-  "Drug_ID_FK" number
+CREATE TABLE "dicease" (
+  "id" number PRIMARY KEY,
+  "dicease_name" number,
+  "drug_id_fk" number
 );
 
-ALTER TABLE "Dicease" ADD FOREIGN KEY ("Drug_ID_FK") REFERENCES "Drug" ("ID");
+ALTER TABLE "dicease" ADD FOREIGN KEY ("drug_id_fk") REFERENCES "drug" ("id");

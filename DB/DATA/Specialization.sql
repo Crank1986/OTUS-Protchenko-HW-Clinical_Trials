@@ -1,4 +1,4 @@
-CREATE TABLE "Specialization" (
-  "ID" number PRIMARY KEY,
-  "Specialization_Name" varchar(150)
+CREATE TABLE "specialization" (
+  "id" number PRIMARY KEY,
+  "specialization_name" varchar(150)
 );

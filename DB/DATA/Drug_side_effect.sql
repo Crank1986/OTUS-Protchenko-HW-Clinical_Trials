@@ -1,7 +1,7 @@
-CREATE TABLE "Drug_side_effect" (
-  "Drug_ID_FK" number,
-  "Side_effect_ID_FK" number
+CREATE TABLE "drug_side_effect" (
+  "drug_id_fk" number,
+  "dide_effect_id_fk" number
 );
 
-ALTER TABLE "Drug_side_effect" ADD FOREIGN KEY ("Drug_ID_FK") REFERENCES "Drug" ("ID");
-ALTER TABLE "Drug_side_effect" ADD FOREIGN KEY ("Side_effect_ID_FK") REFERENCES "Side_effect" ("ID");
+ALTER TABLE "drug_side_effect" ADD FOREIGN KEY ("drug_id_fk") REFERENCES "drug" ("id");
+ALTER TABLE "drug_side_effect" ADD FOREIGN KEY ("side_effect_id_fk") REFERENCES "side_effect" ("id");

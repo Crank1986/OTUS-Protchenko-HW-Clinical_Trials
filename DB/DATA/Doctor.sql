@@ -1,6 +1,6 @@
-CREATE TABLE "Doctor" (
-  "ID" number PRIMARY KEY,
-  "First_name" varchar(150),
-  "Middle_name" varchar(150),
-  "Last_name" varchar(150)
+CREATE TABLE "doctor" (
+  "id" number PRIMARY KEY,
+  "first_name" varchar(150),
+  "middle_name" varchar(150),
+  "last_name" varchar(150)
 );

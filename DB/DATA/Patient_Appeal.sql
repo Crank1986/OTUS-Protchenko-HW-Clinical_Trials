@@ -1,7 +1,7 @@
-CREATE TABLE "Patient_Appeal" (
-  "Number" number PRIMARY KEY,
-  "Patient_INN" number,
-  "Date" datetime,
-  "Text" varchar(5000)
+CREATE TABLE "patient_appeal" (
+  "number" number PRIMARY KEY,
+  "patient_inn" number,
+  "date" datetime,
+  "text" varchar(5000)
 );
-ALTER TABLE "Patient_Appeal" ADD FOREIGN KEY ("Patient_INN") REFERENCES "Patient" ("Personel_INN");
+ALTER TABLE "patient_appeal" ADD FOREIGN KEY ("patient_inn") REFERENCES "patient" ("personel_inn");
