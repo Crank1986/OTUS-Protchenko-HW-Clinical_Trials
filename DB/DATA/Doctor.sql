@@ -5,3 +5,4 @@ CREATE TABLE "doctor" (
   "last_name" varchar(150)
 );
 ALTER TABLE "doctor" ADD FOREIGN KEY ("id") REFERENCES "clinical_trial" ("doctor_id_fk");
+ALTER TABLE "doctor" ADD FOREIGN KEY ("id") REFERENCES "hospital" ("doctors_fk");

@@ -8,3 +8,4 @@ CREATE TABLE "patient" (
   "phone_number" varchar(20)
 );
 ALTER TABLE "patient" ADD FOREIGN KEY ("personel_inn") REFERENCES "clinical_trial" ("patient_inn_fk");
+ALTER TABLE "patient" ADD FOREIGN KEY ("personel_inn") REFERENCES "hospital" ("patients_fk");
