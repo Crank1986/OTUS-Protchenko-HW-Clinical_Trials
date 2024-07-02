@@ -1,3 +1,5 @@
+-- Связь таблицы patient с таблицей clinical_trial по PK, *-1
+-- Связь таблицы patient с таблицей hospital по PK, *-1
 CREATE TABLE "patient" (
   "personel_inn" number PRIMARY KEY,
   "first_name" varchar(150),

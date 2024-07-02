@@ -1,3 +1,8 @@
+-- Связь таблицы clinical_trial с таблицей hospital по FK, 1-*
+-- Связь таблицы clinical_trial с таблицей patient по FK, 1-*
+-- Связь таблицы clinical_trial с таблицей doctor по FK, 1-*
+-- Связь таблицы clinical_trial c таблицей dicease по FK, 1-*
+-- Связь таблицы clinical_trial c таблицей drug по FK, 1-*
 CREATE TABLE "clinical_trial" (
   "name" varchar(150),
   "phase" varchar(150),
