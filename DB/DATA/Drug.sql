@@ -1,4 +1,4 @@
--- Связь таблицы drug c таблицей clinical_trial по PK, *-1
+-- Связь таблицы drug c таблицей clinical_trial по PK, 1-*
 CREATE TABLE "drug" (
   "id" number PRIMARY KEY,
   "name" varchar(150),
@@ -7,4 +7,3 @@ CREATE TABLE "drug" (
   "global_name" varchar(150),
   "local_name" varchar(150)
 );
-ALTER TABLE "drug" ADD FOREIGN KEY ("id") REFERENCES "clinical_trial" ("drug_id_fk");
