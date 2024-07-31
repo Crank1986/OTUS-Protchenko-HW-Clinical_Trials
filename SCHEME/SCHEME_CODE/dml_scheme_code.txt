@@ -1,0 +1,86 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table Clinical_trial {
+  Name varchar(150)
+  Phase varchar(150)
+  Start_date datetime
+  End_date datetime
+  Is_Placebo bool
+  Result varchar(150) 
+  Patient_INN_FK number [ref: > Patient.Personel_INN]
+  Hospital_ID_FK number [ref: > Hospital.ID]
+  Doctor_ID_FK number [ref: > Doctor.ID]
+  Drug_ID_FK number [ref: > Drug.ID]
+  Dicease_ID_FK number [ref: > Dicease.ID]
+}
+
+Table Dicease {
+  ID number [primary key]
+  Name number
+  Drug_ID_FK number [ref: > Drug.ID]
+}
+
+
+Table Doctor {
+  ID number [primary key]
+  First_name varchar(150)
+  Middle_name varchar(150)
+  Last_name varchar(150)
+}
+
+table Specialization {
+  ID number [primary key]
+  Name varchar(150)
+}
+
+table Doctors_Specialization {
+  Doctor_ID_FK number [ref: > Doctor.ID]
+  Specialization_ID_FK number [ref: > Specialization.ID]
+}
+
+Table Patient {
+  Personel_INN number [primary key]
+  First_name varchar(150)
+  Middle_name varchar(150)
+  Last_name varchar(150)
+  SNILS varchar(20)
+  Email varchar(150)
+  Phone_number varchar(20)
+}
+
+Table Hospital {
+  ID number [primary key]
+  Name varchar(150)
+  Address varchar(200)
+  Patients_FK number [ref: < Patient.Personel_INN]
+  Doctors_FK number [ref: < Doctor.ID]
+  Hospital_Specializtion_FK number [ref: > Specialization.ID]
+}
+
+
+Table Drug {
+  ID number [primary key]
+  name varchar(150)
+  Article varchar(150)
+  Active_Principle varchar(150)
+  Global_name varchar(150)
+  Local_name varchar(150)
+}
+
+Table Drug_side_effect {
+  Drug_ID_FK number [ref: > Drug.ID]
+  Side_effect_ID_FK number [ref: > Side_effect.ID]
+}
+
+table Side_effect {
+  ID number [primary key]
+  name varchar(150)
+}
+
+Table Patient_Appeal {
+  Number number [primary key]
+  Patient_INN number [ref: > Patient.Personel_INN]
+  Date datetime
+  Text varchar(5000)
+}
